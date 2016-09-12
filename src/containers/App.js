@@ -15,8 +15,6 @@ class App extends Component {
     if (!this.props.locations.length) {
       this.props.actions.findUsersLocation()
     }
-    this.props.actions.updateAllLocations()
-    setInterval(this.props.actions.updateAllLocations, 60 * 1000)
   }
   render() {
     const { locations, actions } = this.props

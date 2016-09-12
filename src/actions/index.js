@@ -29,7 +29,7 @@ export function askWeatherData(id, isForecast) {
 
     let reqestURL = OWM_URL
 
-    reqestURL += isForecast ? 'forecast' : 'weather'
+    reqestURL += 'weather'
     reqestURL += `?${params}&appid=${OWM_API_KEY}&units=metric&cnt=15` 
 
     return fetchData(reqestURL, (err, response) => {
@@ -39,11 +39,7 @@ export function askWeatherData(id, isForecast) {
           dispatch(removeLocation(id))
           return
         }
-        if (isForecast) {
-          dispatch(updateForecast(id, response, timezone))
-        } else {
-          dispatch(updateWeather(id, response))
-        }
+        dispatch(updateWeather(id, response))
       }
     })
   }
