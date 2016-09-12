@@ -1,1 +1,1 @@
-# react-redux-weather
+Build with redux and react.
